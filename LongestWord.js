@@ -1,11 +1,12 @@
 function LongestWord(sen) { 
+
   // code goes here 
   senSplit = sen.split(" ");
-  senWord = isLetter(senSplit[0]);
+  senWord = isLetterOrNum(senSplit[0]);
   //console.log(senWord);
 
   for(let i = 0; i < senSplit.length; i++) {
-    let newWord = isLetter(senSplit[i]);
+    let newWord = isLetterOrNum(senSplit[i]);
       if(newWord.length > senWord.length) {
         senWord = newWord;
       }
@@ -13,11 +14,12 @@ function LongestWord(sen) {
   return senWord; 
 }
 
-function isLetter(word){
+function isLetterOrNum(word){
     let justLetters = "";
   
     for(let i = 0; i < word.length; i++){
-      if(word[i].charCodeAt()>64 && word[i].charCodeAt()<123){
+      if((word[i].charCodeAt()>64 && word[i].charCodeAt()<123) || 
+      (word[i].charCodeAt()>47 && word[i].charCodeAt()<58)){
       justLetters += word[i];
       }
     }
