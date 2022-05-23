@@ -1,0 +1,27 @@
+function detectWord(str) {
+  const strArray = str.split("");
+  let hiddenArray=[];
+  
+  for(let i = 0; i < strArray.length; i++){
+    if(!checkCaps(strArray[i])){
+      hiddenArray.push(strArray[i]);
+    }
+  }
+  const hiddenWord = hiddenArray.join("");
+  return hiddenWord;
+}
+
+function checkCaps(str){
+		if(str === str.toUpperCase()) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+console.log(checkCaps("a"));
+console.log(checkCaps("A"));
+
+console.log(detectWord("UcUNFYGaFYFYGtNUH"));
+console.log(detectWord("bEEFGBuFBRrHgUHlNFYaYr"));
+console.log(detectWord("YFemHUFBbezFBYzFBYLleGBYEFGBMENTment"));
