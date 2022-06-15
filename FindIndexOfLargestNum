@@ -1,0 +1,31 @@
+//Find the index of the largest number in the array two ways
+
+function findIndexOfNum(arr) {
+  let largestNum = arr[0];
+  let position = 0;
+  
+  for(let i =0; i<arr.length; i++) {
+    if(arr[i] > largestNum){
+      largestNum = arr[i];
+      position = i;
+    }
+  }
+  return position;
+}
+
+function findIndex(arr) {
+  let largestNum = arr[0];
+  let position;
+  
+  for(let num of arr) {
+    if(num > largestNum){
+      largestNum = num;
+      position = arr.indexOf(num);
+    }
+  }
+  return position;
+}  
+
+console.log(findIndexOfNum([3,2,6,9,6,1]));
+
+console.log(findIndex([3,2,6,9,6,1]));
